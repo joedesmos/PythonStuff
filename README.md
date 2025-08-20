@@ -2,4 +2,5 @@ PythonStuff
 
 Programs:
 
-Calculator
+- Calculator
+- Blackjack
