@@ -33,30 +33,29 @@ while calculator:
     choice = input('\nWould you like to add, subtract, multiply, or divide?: ').lower()
     try:
 
-        if choice not in addlist or subtractlist or multiplylist or dividelist:
-            print('\nPlease choose one of the options.')
-            continue
-        elif choice in addlist:
+        if choice in addlist:
             print('\nYou chose to add.')
             input1 = float(input('First Number: '))
             input2 = float(input('Second Number: '))
             add(input1, input2)
-        elif choice in subtractlist:
+        if choice in subtractlist:
             print('\nYou chose to subtract.')
             input1 = float(input('First Number: '))
             input2 = float(input('Second Number: '))
             subtract(input1, input2)
-        elif choice in multiplylist:
+        if choice in multiplylist:
             print('\nYou chose to multiply.')
             input1 = float(input('First Number: '))
             input2 = float(input('Second Number: '))
             multiply(input1, input2)
-        elif choice in dividelist:
+        if choice in dividelist:
             print('\nYou chose to divide.')
             input1 = float(input('First Number: '))
             input2 = float(input('Second Number: '))
             divide(input1, input2)
+        else:
+            continue
 
     except ValueError:
-        print('\nPlease type a number.')
+        print('\nPlease type an option.')
         continue

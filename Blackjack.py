@@ -249,7 +249,7 @@ while playing:
         playerTotalCardValue = playerCardValue1 + playerCardValue2
         
         totalTimesDelt += 1
-        time.sleep(1)
+        time.sleep(0.5)
         print(f"\nThe dealer has a {dealerCard1}.")
         print(f"\nYou have a {playerCard1} and a {playerCard2}. Value = {playerTotalCardValue}")
 
