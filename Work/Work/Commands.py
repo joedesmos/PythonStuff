@@ -1,6 +1,9 @@
 #Print Statements
 print("Hello World")
 
+#Input Statements
+name = input("What is your name? ")
+
 #Comments
 #Single Line
 
@@ -10,7 +13,7 @@ Comment
 """
 
 #Variables
-x = 5
+x = 1
 y = "Hello"
 
 print(x)
@@ -23,3 +26,14 @@ c = 5.10 #Float
 d = True #Boolean
 
 print(type(a))
+
+#For loops
+for i in range(5):
+    print(i)
+
+#If Statements
+if x > 3:
+    print("x is greater than 3")
+else:
+    print("x is NOT greater than 3")
+
