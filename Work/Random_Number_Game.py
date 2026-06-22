@@ -2,16 +2,19 @@ import random
 
 # Generate random number between 1 and 100
 random_number = random.randint(1, 100)
+print(random_number)
 
 #Attempts counter
 attempts = 0
 
 #Game loop
 guess = int(input("Guess a Number: "))
+attempts += 1
 while guess != random_number:
+    attempts +=1
     if guess < random_number:
         print("Too low!")
     else:
         print("Too high!")
     guess = int(input("Guess a Number: "))
-print("Congrats! You guessed the number!")
+print(f"Congrats! You guessed the number in {attempts} attempts!")
