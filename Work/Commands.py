@@ -37,3 +37,6 @@ if x > 3:
 else:
     print("x is NOT greater than 3")
 
+#Operators
+#<(less than), >(greater than), <=(less than or equal to), >=(greater than or equal to), ==(equal to), !=(not equal to)
+
