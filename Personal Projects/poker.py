@@ -1,6 +1,10 @@
 import time
 import random
 
+chips = 25
+bet = 0
+playerAction = None
+gameOver = None
 userCard1 = None
 userCard2 = None
 flopCard1 = None
@@ -48,15 +52,42 @@ def flop():
         flopCard3 = random.choice(list(cards))
     print(flopCard3)
 
+def turn():
+    pass
+
+def river():
+    pass
+
+def action():
+    playerAction = input(f"You have {chips} chips. Would you like to check, call, or fold.")
+
+    if playerAction == "check":
+        turn()
+    elif playerAction == "call":
+        bet = int(input("How many chips would you like to bet?: "))
+        chips -= bet
+        print(f"Remaining chips: {chips}")
+    else:
+        gameOver = input("You folded! Would you like to play again? ('y' to play again and 'n' to stop playing): ")
+        if gameOver == "y":
+            main()
+        else:
+            pass
+
 def main():
     print("Welcome to Poker!")
     time.sleep(0.5)
-    print("\nhRules of Poker:\n\nThree cards will be handed out that is called the flop. Next, a fourth card will be handed out that is called the turn. Lastly, when the fifth and final card is handed out that is called the river.\nYour goal is to make the best hand of five cards as possible with your two cards you got dealt and the 5 cards that got dealt.\n\nPoker Hand List(In Order of Best to Worst):\nRoyal Flush: Ace, King, Queen, Jack, 10 of the same suit\nStraight Flush: Five consecutive cards of the same suit\nFour of a Kind: Four cards of the exact same rank\nFull House: Three of a kind plus a pair\nFlush: Five cards of the same suit, not in order\nStraight: Five consecutive cards of mixed suits\nThree of a Kind: Three cards of the same rank\nTwo Pair: Two different pairs in one hand\nOne Pair: Two cards of the same rank\nHigh Card: The highest card when no combination is made.")
+    print("\nhRules of Poker:\n\nThree cards will be handed out that is called the flop. Next, a fourth card will be handed out that is called the turn. Lastly, when the fifth and final card is handed out that is called the river.\nYour goal is to make the best hand of five cards as possible with your two cards you got dealt and the 5 cards that got dealt.\n\nPoker Hand List(In Order of Best to Worst):\nRoyal Flush: Ace, King, Queen, Jack, 10 of the same suit\nStraight Flush: Five consecutive cards of the same suit\nFour of a Kind: Four cards of the exact same rank\nFull House: Three of a kind plus a pair\nFlush: Five cards of the same suit, not in order\nStraight: Five consecutive cards of mixed suits\nThree of a Kind: Three cards of the same rank\nTwo Pair: Two different pairs in one hand\nOne Pair: Two cards of the same rank\nHigh Card: The highest card when no combination is made.\n\n")
     time.sleep(5)
     print("Here are your cards:\n")
     deal()
     time.sleep(0.5)
-    print("Flop:")
+    print("\n\nFlop:\n")
     flop()
+    action()
+    turn()
+    action()
+    river()
+    action()
 
 main()
