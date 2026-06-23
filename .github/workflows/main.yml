@@ -1,0 +1,20 @@
+name: Build Windows Exe
+on: [push]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-level: '3.x'
+    - name: Install PyInstaller
+      run: pip install pyinstaller
+    - name: Build Exe
+      run: pyinstaller --onefile "Personal Projects/Blackjack.py"
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: Blackjack-Windows
+        path: dist/Blackjack.exe
