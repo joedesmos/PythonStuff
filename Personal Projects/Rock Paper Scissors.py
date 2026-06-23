@@ -11,4 +11,11 @@ while not valid_choice:
 
 computer_choice = random.choice(['r', 'p', 's'])
 
-print()
+if choice == "r" and computer_choice == "p":
+    print("You Lose!")
+elif choice == "p" and computer_choice == "s":
+    print("You Lose!")
+elif choice == "s" and computer_choice == "r":
+    print("You Lose!")
+else:
+    print("You Win!")
